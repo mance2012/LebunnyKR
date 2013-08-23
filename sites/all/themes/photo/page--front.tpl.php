@@ -5,124 +5,86 @@
  * structure of a single Drupal page.
  */
 ?>
- <div  class="background_overlay"></div>
-  <div id="slideshow">							
-	<img src="http://upload.wikimedia.org/wikipedia/commons/9/95/2002-07_Sylt_-_Groyne.jpg" alt="Css Template Preview" />
-	<img src="http://upload.wikimedia.org/wikipedia/commons/2/20/2003-05_Sylt_-_Westerland_Promenade.jpg" alt="Css Template Preview" />
-	<img src="http://upload.wikimedia.org/wikipedia/commons/5/52/IMG_1444_Kinkaku-ji.JPG" alt="Css Template Preview" />
-	<img src="http://upload.wikimedia.org/wikipedia/commons/c/c4/Niagara_watervallen_toeristenbootje.jpg" alt="Css Template Preview" />
-	<img src="http://upload.wikimedia.org/wikipedia/commons/2/2d/%D0%9D%D1%96%D0%B6%D0%BD%D0%B8%D0%B9_%D1%80%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2%D0%B8%D0%B9_%D1%81%D0%B2%D1%96%D1%82%D0%BB%D0%BE.jpg" alt="Css Template Preview" />		
+ 
+  <!--div id="slideshow">							
+	<img src="http://www.lebunnybleu.com/TT/new2/img/home_1280.jpg" alt="Css Template Preview" />
+	<img src="http://www.lebunnybleu.com/TT/new2/img/collection_1280.jpg" alt="Css Template Preview" />
+	<img src="http://www.lebunnybleu.com/TT/new2/img/store_1280.jpg" alt="Css Template Preview" />
+	<img src="http://www.lebunnybleu.com/TT/new2/img/brand_1280.jpg" alt="Css Template Preview" />
+	<img src="http://www.lebunnybleu.com/TT/new2/img/cs_1281.jpg" alt="Css Template Preview" />		
 </div><!--#slider-->
-<div id="header">
-      <?php if ($logo): ?>
-      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
-        <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-      </a>
-    <?php endif; ?>
-
-    <?php if ($site_name || $site_slogan): ?>
-      <div id="name-and-slogan">
-
-        <?php if ($site_name): ?>
-          <?php if ($title): ?>
-            <div id="site-name">
-              <strong>
-                <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
-              </strong>
-            </div>
-          <?php else: /* Use h1 when the content title is empty */ ?>
-            <h1 id="site-name">
-              <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
-            </h1>
-          <?php endif; ?>
-        <?php endif; ?>
-
-        <?php if ($site_slogan): ?>
-          <div id="site-slogan">
-            <?php print $site_slogan; ?>
-          </div>
-        <?php endif; ?>
-
-      </div> <!-- /#name-and-slogan -->
-    <?php endif; ?>
+<!--div id="header">
+      
  
  </div><!--end header-->
-<div id="frontwrap">
-<img src="sites/all/themes/photo/css/images/scroll2.png" />
-<div id="page">
- <div class="contenar">
-  <div id="manubar">
-     <?php if ($main_menu): ?>
-      <div id="main-menu" class="navigation">
-        <?php print theme('links__system_main_menu', array(
-          'links' => $main_menu,
-          'attributes' => array(
-            'id' => 'main-menu-links',
-            'class' => array('links', 'inline', 'clearfix'),
-          ),
-          'heading' => array(
-            'text' => t('Main menu'),
-            'level' => 'h2',
-            'class' => array('element-invisible'),
-          ),
-        )); ?>
-      </div> <!-- /#main-menu -->
-    <?php endif; ?>
 
-  </div> <!-- #manubar -->
- <div id="content" class="clearfix">
-   <?php if ($messages): ?>
-    <div id="messages"><div class="section clearfix">
-      <?php print $messages; ?>
-    </div></div> <!-- /.section, /#messages -->
-   <?php endif; ?>
-   <?php if ($breadcrumb): ?>
-      <div id="breadcrumb"><?php print $breadcrumb; ?></div>
-   <?php endif; ?>
-   <?php print render($title_prefix); ?>
-      <?php if ($title): ?>
-        <h1 class="title" id="page-title">
-          <?php print $title; ?>
-        </h1>
-      <?php endif; ?>
-      <?php print render($title_suffix); ?>
-      <?php if ($tabs): ?>
-        <div class="tabs">
-          <?php print render($tabs); ?>
+<div class="master">
+    	<span class="logo"> 
+    		<?php if ($logo): ?>
+		      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
+		        <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+		      </a>
+    		<?php endif; ?>
+    	</span>
+        
+<!---------------------------------------DropMenu------------------------------->       
+        <header class="ui" id="home">
+        	<nav>
+                <ul>
+                    <li class="menu on"><a class="icon_menu"><span class="icon-menu"></span></a>
+                        <?php
+							$menu = menu_navigation_links('main-menu');
+							print theme('links__system_main_menu', array('links' => $menu));
+						?>
+                    </li>
+                </ul>        	
+            </nav>
+            
+        </header>
+<!----------------------------------------Dropmenu------------------------------------>
+
+
+
+<!----------------------------------------Center Content------------------------------------>
+        <div role="marquee" id="hero" style="height: 314px;">
+            <div class="carousel">
+            	<nav>
+                    <a href="#prev" class="prev" title="Previous" data-action="prev" ></a>
+                    <a href="#next" class="next" title="Next" data-action="next" ></a>
+                <div class="pagination" id="hero_nav"><ol><li class="active"><a href="#1" data-action="1">1</a></li><li><a href="#2" data-action="2">2</a></li><li><a href="#3" data-action="3">3</a></li><li><a href="#4" data-action="4">4</a></li></ol></div>
+                </nav>
+                <div class="swipe" style="visibility: visible;">
+                    <div class="swipe-wrap">
+                        <div class="panel"  data-index="0">
+                            <section class="wrapper">
+                                <header>
+                                	<div class="headerBG">
+                                        <span class="mainBG" style="display:none;"></span>
+                                        <h1><img src="sites/all/themes/photo/img/home_welcom.png" /></h1>
+                                        <ul>
+                                            <li><a href="#"><img src="sites/all/themes/photo/img/Flag01.jpg" /></a></li>
+                                            <li><a href="#"><img src="sites/all/themes/photo/img/Flag02.jpg" /></a></li>
+                                            <li><a href="#"><img src="sites/all/themes/photo/img/Flag03.jpg" /></a></li>
+                                            <li><a href="#"><img src="sites/all/themes/photo/img/Flag04.jpg" /></a></li>
+                                            <li><a href="#"><img src="sites/all/themes/photo/img/Flag05.jpg" /></a></li>
+                                            <li><a href="#"><img src="sites/all/themes/photo/img/Flag06.jpg" /></a></li>
+                                            <li><a href="#"><img src="sites/all/themes/photo/img/Flag07.jpg" /></a></li>
+                                            <li><a href="#"><img src="sites/all/themes/photo/img/Flag08.jpg" /></a></li>
+                                             <li><a href="#"><img src="sites/all/themes/photo/img/Flag_last.jpg" /></a></li>
+                                        </ul>
+                                    </div>
+                                </header>
+                            </section>
+                            <section class="bg"></section>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+                
+            </div>
         </div>
-      <?php endif; ?>
-      <?php print render($page['help']); ?>
-      <?php if ($action_links): ?>
-        <ul class="action-links">
-          <?php print render($action_links); ?>
-        </ul>
-      <?php endif; ?>
-      <?php print render($page['content']); ?>
-      <?php print $feed_icons; ?>
-
-  </div><!--end content-->
- </div><!--contenar-->
-</div><!--end page-->
-
-<div id="socialnet"class="clearfix">
- <div class="contenar"><div class="core">
-  <a href="" target="_blank"/><img src="http://boxy.photo.net/wp-content/themes/boxy/images/lin.png" /></a> <a href="" target="_blank"/><img src="http://boxy.photo.net/wp-content/themes/boxy/images/t.png" /><a> <a href="https://www.facebook.com/pages/Boxy/321511594556922" target="_blank"/><img src="http://boxy.photo.net/wp-content/themes/boxy/images/f.png" /></a> 
-  <div style="clear: both;"> &nbsp; </div> 
- </div></div> 
-
-</div><!--socialnet-->
-<div id="footer">
- <div class="contenar">
-  <div id="subfooter" class="clearfix">
-
-  <div style="clear: both;"> &nbsp; </div>
- </div><!--end subfooter--> 
-    <?php if ($page['footer']): ?>
-      <div class="footer" class="clearfix">
-        <?php print render($page['footer']); ?>
-      </div> <!-- /#footer -->
-    <?php endif; ?>
-		 </div><!--contenar-->
-</div><!--end footer-->
-
-</div><!--end wrap-->
+<!----------------------------------------Center Content------------------------------------>        
+        
+</div>

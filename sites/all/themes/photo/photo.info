@@ -8,10 +8,17 @@ stylesheets[all][] = css/style.css
 stylesheets[all][] = css/general.css
 stylesheets[all][] = css/blackstyle.css
 stylesheets[all][] = css/slider.css
+stylesheets[all][] = css/fontello.css
+stylesheets[all][] = css/animation.css
+stylesheets[all][] = css/fontello-codes.css
+stylesheets[all][] = css/fontello-embedded.css
+stylesheets[all][] = css/fontello-ie7-codes.css
+stylesheets[all][] = css/fontello-ie7.css
 
 ;SCRIPTS
 scripts[] = js/jquery.js
 scripts[] = js/slider.js
+scripts[] = js/swipe.js
 
 ; REGIONS
 regions[content] = Content
