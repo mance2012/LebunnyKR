@@ -32,7 +32,7 @@ form{padding:0;	margin:0;}
 /* General end */
 
 /*Index*/
-.bg{background: url(images/01.jpg) center center no-repeat; min-height:100%; background-size:cover;
+.bg{background-position: 50% 50%; min-height:100%; background-size:cover;
 height: 100%;
 background-size: cover;
 width: 100%;
@@ -230,6 +230,24 @@ font-weight:bold;
     -khtml-border-radius: 15px;
     border-radius: 15px;
 	}*/
+.carousel .panel .wrapper {
+	position: relative;
+	z-index: 1;
+}
+.wrapper {
+	position: relative;
+	
+	margin: 0 auto;
+}
+.carousel .panel {
+	background-color: #fff;
+	text-align: center;
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+}
+.swipe{overflow: hidden;visibility: hidden;position: relative;-webkit-transform: translate3d(0, 0, 0);-moz-transform: translate3d(0, 0, 0);-ms-transform: translate3d(0, 0, 0);-o-transform: translate3d(0, 0, 0);transform: translate3d(0, 0, 0);}
+.swipe-wrap {overflow: hidden;position: relative;}
 .master #hero .carousel .swipe .panel ul li{display:inline;} 
 .master #hero .carousel .swipe .panel ul li a{padding-left:0.425em;}
 
