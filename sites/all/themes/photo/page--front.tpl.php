@@ -12,11 +12,8 @@
 	<img src="http://www.lebunnybleu.com/TT/new2/img/store_1280.jpg" alt="Css Template Preview" />
 	<img src="http://www.lebunnybleu.com/TT/new2/img/brand_1280.jpg" alt="Css Template Preview" />
 	<img src="http://www.lebunnybleu.com/TT/new2/img/cs_1281.jpg" alt="Css Template Preview" />		
-</div><!--#slider-->
-<!--div id="header">
-      
- 
- </div><!--end header-->
+</div--><!--#slider-->
+<!--div id="header"></div><!--end header-->
 
 <div class="master">
     	<span class="logo"> 
@@ -49,13 +46,15 @@
         <div role="marquee" id="hero" style="height: 314px;">
             <div class="carousel">
             	<nav>
+            		<button onclick='mySwipe.prev()'>prev</button> 
+  					<button onclick='mySwipe.next()'>next</button>
                     <a href="#prev" class="prev" title="Previous" data-action="prev" ></a>
                     <a href="#next" class="next" title="Next" data-action="next" ></a>
                 <div class="pagination" id="hero_nav"><ol><li class="active"><a href="#1" data-action="1">1</a></li><li><a href="#2" data-action="2">2</a></li><li><a href="#3" data-action="3">3</a></li><li><a href="#4" data-action="4">4</a></li></ol></div>
                 </nav>
-                <div class="swipe" style="visibility: visible;">
+                <div id='mySwipe' class="swipe" >
                     <div class="swipe-wrap">
-                        <div class="panel"  data-index="0">
+                        <div class="panel">
                             <section class="wrapper">
                                 <header>
                                 	<div class="headerBG">
@@ -75,9 +74,14 @@
                                     </div>
                                 </header>
                             </section>
-                            <section class="bg"></section>
+                            <section class="bg" style="background-image: url(sites/all/themes/photo/css/images/01.jpg)"></section>
                         </div>
-                        
+                        <div class="panel">
+                        	<section class="wrapper">
+                        		<header><h1>TEST</h1></header>
+                        	</section>
+                        	<section class="bg" style="background-image: url(http://www.lebunnybleu.com/TT/new2/img/collection_1280.jpg)"></section>
+                        </div>
                     </div>
                 </div>
                 
